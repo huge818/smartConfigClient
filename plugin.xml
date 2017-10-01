@@ -12,7 +12,9 @@
 	</config-file>
 	<config-file parent="/*" target="AndroidManifest.xml"/>
 	<source-file src="src/android/smartConfigClient.java" target-dir="src/smartConfigClient/smartConfigClient/"/>
+	<source-file src="src/android/util/NetWorkUtil.java" target-dir="src/smartConfigClient/smartConfigClient/util/"/>
 	<source-file src="src/android/libs/SmartConfigClient.jar" target-dir="libs/"/>
 	<source-file src="src/android/libs/armeabi-v7a/libneeze.so" target-dir="libs/armeabi-v7a/"/>
+
   </platform>
 </plugin>
