@@ -66,27 +66,42 @@ public class smartConfigClient extends CordovaPlugin {
 		RecvListener recvListener = new RecvListener() {
 			@Override
 			public void onReceiveTimeOut() {
-				JSONObject receiveTimeOut = new JSONObject();
-				ReceiveTimeOut.put("type", "receiveTimeOut");
+				try{
+					JSONObject receiveTimeOut = new JSONObject();
+					ReceiveTimeOut.put("type", "receiveTimeOut");
+				} 
+				catch(JSONException e){
+					e.printStackTrace();
+				}
 				sendPluginResult(callbackContext,receiveTimeOut);
 			}
 
 			@Override
 			public void onError(int errorCode) {
-				JSONObject error = new JSONObject();
-				error.put("type", "error");
-				error.put("errorCode", errorCode);
+				try{
+					JSONObject error = new JSONObject();
+					error.put("type", "error");
+					error.put("errorCode", errorCode);
+				} 
+				catch(JSONException e){
+					e.printStackTrace();
+				}
 				sendPluginResult(callbackContext,error);
 			}
 
 			@Override
 			public void onReceived(NotifyMessage message) {
-				JSONObject received = new JSONObject();
-				received.put("type", "received");
-				received.put("mac", message.getMac());
-				received.put("ip", message.getIp());
-				received.put("port", message.getPort());
-				received.put("HostName", message.getHostName());
+				try{
+					JSONObject received = new JSONObject();
+					received.put("type", "received");
+					received.put("mac", message.getMac());
+					received.put("ip", message.getIp());
+					received.put("port", message.getPort());
+					received.put("HostName", message.getHostName());
+				} 
+				catch(JSONException e){
+					e.printStackTrace();
+				}
 				sendPluginResult(callbackContext,received);
 			}
 		};
