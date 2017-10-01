@@ -18,7 +18,7 @@ import android.os.Bundle;
 
 import android.util.Log;
 import com.example.client.util.NetWorkUtil;
-import com.example.smartconfigclientdemo.R;
+//import com.example.smartconfigclientdemo.R;
 import com.iflytek.smartconfig.client.SmartConfigClient;
 import com.iflytek.smartconfig.listener.RecvListener;
 import com.iflytek.smartconfig.message.NotifyMessage;
