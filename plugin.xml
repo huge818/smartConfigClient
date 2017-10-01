@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="smartConfigClient" version="1.0.0">
+  <name>smartConfigClient</name>
+  <js-module name="smartConfigClient" src="www/smartConfigClient.js">
+	<clobbers target="cordova.plugins.smartConfigClient"/>
+  </js-module>
+  <platform name="android">
+	<config-file parent="/*" target="res/xml/config.xml">
+	  <feature name="smartConfigClient">
+		<param name="android-package" value="smartConfigClient.smartConfigClient"/>
+	  </feature>
+	</config-file>
+	<config-file parent="/*" target="AndroidManifest.xml"/>
+	<source-file src="src/android/smartConfigClient.java" target-dir="src/smartConfigClient/smartConfigClient/"/>
+	<source-file src="src/android/libs/SmartConfigClient.jar" target-dir="libs/"/>
+	<source-file src="src/android/libs/armeabi-v7a/libneeze.so" target-dir="libs/armeabi-v7a/"/>
+  </platform>
+</plugin>

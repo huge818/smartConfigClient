@@ -1,0 +1,29 @@
+{
+	"name": "smartConfigClient",
+	"version": "1.0.0",
+	"description": "Apache Cordova smartConfig Client Plugin",
+	"cordova": {
+		"id": "smartConfigClient",
+		"platforms": [
+			"android"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/huge818/smartConfigClient"
+	},
+	"keywords": [
+	],
+	"engines": [
+		{
+			"name": "cordova",
+			"version": ">=5.0.0"
+		}
+	],
+	"author": "huge818",
+	"license": "Apache 2.0",
+	"bugs": {
+		"url": "https://github.com/huge818/smartConfigClient/issues"
+	},
+	"homepage": "https://github.com/huge818/smartConfigClient"
+}
