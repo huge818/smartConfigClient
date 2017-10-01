@@ -1,29 +1,91 @@
 {
-	"name": "smartConfigClient",
-	"version": "1.0.0",
-	"description": "Apache Cordova smartConfig Client Plugin",
-	"cordova": {
-		"id": "smartConfigClient",
-		"platforms": [
-			"android"
-		]
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/huge818/smartConfigClient"
-	},
-	"keywords": [
-	],
-	"engines": [
-		{
-			"name": "cordova",
-			"version": ">=5.0.0"
-		}
-	],
-	"author": "huge818",
-	"license": "Apache 2.0",
-	"bugs": {
-		"url": "https://github.com/huge818/smartConfigClient/issues"
-	},
-	"homepage": "https://github.com/huge818/smartConfigClient"
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/huge818/smartConfigClient.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/huge818/smartConfigClient.git",
+        "spec": "git+https://github.com/huge818/smartConfigClient.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:huge818/smartConfigClient.git",
+          "sshUrl": "git+ssh://git@github.com/huge818/smartConfigClient.git",
+          "httpsUrl": "git+https://github.com/huge818/smartConfigClient.git",
+          "gitUrl": "git://github.com/huge818/smartConfigClient.git",
+          "shortcut": "github:huge818/smartConfigClient",
+          "directUrl": "https://raw.githubusercontent.com/huge818/smartConfigClient/master/package.json"
+        }
+      },
+      "E:\\ionic\\projects\\demoProject\\node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/huge818/smartConfigClient.git",
+  "_id": "smartConfigClient@1.0.0",
+  "_inCache": true,
+  "_location": "/smartConfigClient",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/huge818/smartConfigClient.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/huge818/smartConfigClient.git",
+    "spec": "git+https://github.com/huge818/smartConfigClient.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:huge818/smartConfigClient.git",
+      "sshUrl": "git+ssh://git@github.com/huge818/smartConfigClient.git",
+      "httpsUrl": "git+https://github.com/huge818/smartConfigClient.git",
+      "gitUrl": "git://github.com/huge818/smartConfigClient.git",
+      "shortcut": "github:huge818/smartConfigClient",
+      "directUrl": "https://raw.githubusercontent.com/huge818/smartConfigClient/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/huge818/smartConfigClient.git#06c90941cab52fd24349c2453e5c2ab16f0ddb9f",
+  "_shasum": "28b941111075f504801114a455d0b3e45898cb18",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/huge818/smartConfigClient.git",
+  "_where": "E:\\ionic\\projects\\demoProject\\node_modules",
+  "author": {
+    "name": "huge818"
+  },
+  "bugs": {
+    "url": "https://github.com/huge818/smartConfigClient/issues"
+  },
+  "cordova": {
+    "id": "smartConfigClient",
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "Apache Cordova smartConfig Client Plugin",
+  "devDependencies": {},
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ],
+  "gitHead": "06c90941cab52fd24349c2453e5c2ab16f0ddb9f",
+  "homepage": "https://github.com/huge818/smartConfigClient",
+  "keywords": [],
+  "license": "Apache 2.0",
+  "name": "smartConfigClient",
+  "optionalDependencies": {},
+  "readme": "wifi network",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huge818/smartConfigClient.git"
+  },
+  "version": "1.0.0"
 }
