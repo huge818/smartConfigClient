@@ -2,6 +2,7 @@ package smartConfigClient;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.PluginResult;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,6 +33,7 @@ public class smartConfigClient extends CordovaPlugin {
 	private String mSSID;
 	private String mPassword;
 	private int mLocalIP;
+	private CallbackContext callbackContextBack;
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -47,52 +49,61 @@ public class smartConfigClient extends CordovaPlugin {
 			return true;
 		}
 		else if(action.equals("startSendAndListen")) {
+			callbackContextBack=callbackContext;
 			String ssid = args.getString(0);
 			String password = args.getString(1);
 			int localIP = args.getInt(2);
 			mSendThread = new SendThread(ssid, password, localIP);
 			mSendThread.start();
-			this.startListen(callbackContext);
+			this.startListen();
 			return true;
 		}
 		else if(action.equals("startListen")){
-			this.startListen(callbackContext);
+			this.startListen();
 			return true;
 		}
 		return false;
 	}
 
-	public void startListen(CallbackContext callbackContext){
+	public void startListen(){
 		RecvListener recvListener = new RecvListener() {
 			@Override
 			public void onReceiveTimeOut() {
+				JSONObject receiveTimeOut = new JSONObject();
 				try{
-					JSONObject receiveTimeOut = new JSONObject();
-					ReceiveTimeOut.put("type", "receiveTimeOut");
+					receiveTimeOut.put("type", "receiveTimeOut");
 				} 
 				catch(JSONException e){
 					e.printStackTrace();
 				}
-				sendPluginResult(callbackContext,receiveTimeOut);
+				try{
+					sendPluginResult(callbackContextBack,receiveTimeOut);
+				} catch(Exception e){
+					e.printStackTrace();
+				}
 			}
 
 			@Override
 			public void onError(int errorCode) {
+				JSONObject error = new JSONObject();
 				try{
-					JSONObject error = new JSONObject();
 					error.put("type", "error");
 					error.put("errorCode", errorCode);
 				} 
 				catch(JSONException e){
 					e.printStackTrace();
 				}
-				sendPluginResult(callbackContext,error);
+				try{
+					sendPluginResult(callbackContextBack,error);
+				} catch(Exception e){
+					e.printStackTrace();
+				}
 			}
 
 			@Override
 			public void onReceived(NotifyMessage message) {
+				JSONObject received = new JSONObject();
 				try{
-					JSONObject received = new JSONObject();
 					received.put("type", "received");
 					received.put("mac", message.getMac());
 					received.put("ip", message.getIp());
@@ -102,7 +113,11 @@ public class smartConfigClient extends CordovaPlugin {
 				catch(JSONException e){
 					e.printStackTrace();
 				}
-				sendPluginResult(callbackContext,received);
+				try{
+					sendPluginResult(callbackContextBack,received);
+				} catch(Exception e){
+					e.printStackTrace();
+				}
 			}
 		};
 		SmartConfigClient.startListen(recvListener);
@@ -135,7 +150,7 @@ public class smartConfigClient extends CordovaPlugin {
 				try{
 					SmartConfigClient.send(mSSID, mPassword, mLocalIP);
 				} catch (Exception e) {
-					Log.e(TAG, "Exception when send smartconfig info");
+					//Log.e(TAG, "Exception when send smartconfig info");
 				}
 			}
 		}
