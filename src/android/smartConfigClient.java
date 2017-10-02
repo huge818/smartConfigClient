@@ -42,10 +42,12 @@ public class smartConfigClient extends CordovaPlugin {
 			int pecvTimeOut = args.getInt(1);
 			SmartConfigClient.setPacketInterval(packetInterval);
 			SmartConfigClient.setRecvTimeOut(pecvTimeOut);
+			callbackContext.success();
 			return true;
 		}
 		else if (action.equals("stopListen")) {
 			SmartConfigClient.stopListen();
+			callbackContext.success();
 			return true;
 		}
 		else if(action.equals("startSendAndListen")) {
