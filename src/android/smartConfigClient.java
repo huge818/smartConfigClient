@@ -81,6 +81,13 @@ public class smartConfigClient extends CordovaPlugin {
 			this.startListen();
 			return true;
 		}
+		else if(action.equals("send")){
+			String ssid = args.getString(0);
+			String password = args.getString(1);
+			int localIP = args.getInt(2);
+			SmartConfigClient.send(ssid, password, localIP);
+			return true;
+		}
 		return false;
 	}
 
