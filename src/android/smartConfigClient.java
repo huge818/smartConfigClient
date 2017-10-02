@@ -55,9 +55,26 @@ public class smartConfigClient extends CordovaPlugin {
 			String ssid = args.getString(0);
 			String password = args.getString(1);
 			int localIP = args.getInt(2);
-			mSendThread = new SendThread(ssid, password, localIP);
-			mSendThread.start();
-			this.startListen();
+			try{
+				mSendThread = new SendThread(ssid, password, localIP);
+				mSendThread.start();
+				this.startListen();
+			} catch(Exception e){
+				e.printStackTrace();
+			} finally{
+				JSONObject startError = new JSONObject();
+				try{
+					startError.put("type", "startError");
+				} 
+				catch(JSONException e){
+					e.printStackTrace();
+				}
+				try{
+					sendPluginResult(callbackContext,startError);
+				} catch(Exception e){
+					e.printStackTrace();
+				}
+			}
 			return true;
 		}
 		else if(action.equals("startListen")){
