@@ -8,6 +8,10 @@ exports.startSendAndListen = function(arg0, arg1, arg2, success, error) {
     exec(success, error, "smartConfigClient", "startSendAndListen", [arg0,arg1,arg2]);
 };
 
+exports.send = function(arg0, arg1, arg2, success, error) {
+    exec(success, error, "smartConfigClient", "send", [arg0, arg1, arg2]);
+};
+
 exports.stopListen = function(success, error) {
     exec(success, error, "smartConfigClient", "stopListen", []);
 };
